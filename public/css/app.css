@@ -20,6 +20,7 @@ p {
     margin-bottom: 10px;
     align-items: center;
     background-color: #e2e8f0;
+    width: 70%;
 }
 
 .card-header {
@@ -50,7 +51,6 @@ p {
     margin-top: 10px;
     color: black;
     font-family: "Arial", sans-serif;
-
 }
 
 .real-feel-shade {
@@ -107,3 +107,11 @@ p {
     margin-left: auto;
 }
 
+.location {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: black;
+    font-size: 14pt;
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+}

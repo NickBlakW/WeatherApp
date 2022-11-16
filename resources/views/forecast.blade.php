@@ -17,6 +17,7 @@
             <div class="card-header">
                 <div>
                     <h2 class="title">Day</h2>
+                    <p class="align-small location">{{ $location }}</p>
                     <p class="align-small">Date: {{ $daily['Date'] }}</p>
                 </div>
 
@@ -96,6 +97,7 @@
             <div class="card-header">
                 <div>
                     <h2 class="title">Night</h2>
+                    <p class="align-small location">{{ $location }}</p>
                     <p class="align-small">Date: {{ $daily['Date'] }}</p>
                 </div>
 

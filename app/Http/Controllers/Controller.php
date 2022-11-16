@@ -36,6 +36,7 @@ class Controller extends BaseController
         $loc_file = file_get_contents($loc_url);
         $loc_data = json_decode($loc_file, true);
         $loc_key = $loc_data[0]['Key'];
+        $location = $loc_data[0]['LocalizedName'];
 
         $url = "http://dataservice.accuweather.com/forecasts/v1/daily/1day/${loc_key}?apikey=${api_key}&details=true&metric=true";
 
@@ -50,6 +51,7 @@ class Controller extends BaseController
                 'forecasts' => $forecasts,
                 'headline' => $headline,
                 'daily' => $daily,
+                'location' => $location,
             ]
         );
     }

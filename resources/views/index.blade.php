@@ -15,7 +15,7 @@
         <h1>Get Weather Forecast</h1>
         <form action="{{ route('forecast.page') }}" method="POST">
             @csrf
-            <label for="location">Input location:</label><br>
+            <label for="location">Search for location:</label><br>
             <input type="text" name="location" id="location">
             <button type="submit">Search</button>
         </form>
