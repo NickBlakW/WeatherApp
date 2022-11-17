@@ -16,6 +16,13 @@ p {
 
 }
 
+.index-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .card {
     margin-bottom: 10px;
     align-items: center;
@@ -106,4 +113,3 @@ p {
     text-align: right;
     margin-left: auto;
 }
-
