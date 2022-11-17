@@ -12,13 +12,15 @@
 
 <body>
     <div class="root">
-        <h1>Get Weather Forecast</h1>
-        <form action="{{ route('forecast.page') }}" method="POST">
-            @csrf
-            <label for="location">Search for location:</label><br>
-            <input type="text" name="location" id="location">
-            <button type="submit">Search</button>
-        </form>
+        <div class="index-page">
+            <h1>Get Weather Forecast</h1>
+            <form action="{{ route('forecast.page') }}" method="POST">
+                @csrf
+                <label for="location">Input location:</label><br>
+                <input type="text" name="location" id="location">
+                <button type="submit">Search</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
