@@ -1,4 +1,3 @@
-version: "3.9"
 services:
     db:
         container_name: database
@@ -8,3 +7,7 @@ services:
             MYSQL_ROOT_PASSWORD: secret
         ports:
             - "3306:3306"
+        volumes:
+            - dbdata:/var/lib/mysql
+volumes:
+    dbdata:
