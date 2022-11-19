@@ -18,5 +18,9 @@ Route::get('/', function () {
     return view('index');
 });
 
+// Getting and displaying requested data from Controller class
 Route::post('/forecast', [Controller::class, 'forecast'])->name('forecast.page');
 Route::get('/forecast/{location}', [Controller::class, 'forecast'])->name('forecast');
+
+// Subscription to mailing list
+Route::post('/subscribe', [Controller::class, 'subscribe'])->name('service.subscribe');

@@ -1,0 +1,33 @@
+.modal {
+    visibility: hidden;
+}
+
+.modal.active {
+    visibility: visible;
+}
+
+.modal-content {
+    display: flex;
+    visibility: hidden;
+}
+
+.modal-content.active {
+    display: flex;
+    flex-direction: column;
+    visibility: visible;
+}
+
+.close-modal {
+    margin-top: 15px;
+}
+
+.label {
+    font-size: 15pt;
+    font-family: Arial, sans-serif;
+}
+
+.success {
+    font-family: "Arial Black", sans-serif;
+    font-size: 15px;
+    background: darkgreen;
+}
