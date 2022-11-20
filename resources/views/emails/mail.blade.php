@@ -94,7 +94,7 @@
             <div class="card-header">
                 <div>
                     <h2 class="title">Night</h2>
-                    <p class="align-small location">{{ $subscriber->location }}</p>
+                    <p class="align-small location">{{ ucfirst($subscriber->location) }}</p>
                     <p class="align-small">Date: {{ $daily['Date'] }}</p>
                 </div>
 

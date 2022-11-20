@@ -47,7 +47,7 @@ class Controller extends BaseController
      * Get data from the API
      *
      */
-    private function getData(string $location) {
+    public function getData(string $location) {
         // Get api key from config files
         $api_key = config('accu.api_key');
 

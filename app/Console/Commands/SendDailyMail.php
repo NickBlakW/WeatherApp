@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Mail;
 
 class SendDailyMail extends Command
 {
+    private Controller $controller;
+
     /**
      * The name and signature of the console command.
      *
@@ -27,7 +29,7 @@ class SendDailyMail extends Command
     /**
      * Execute the console command.
      *
-     * @return int
+     * @return void
      */
     public function handle()
     {
@@ -37,23 +39,11 @@ class SendDailyMail extends Command
             $mail = $subscriber->email;
             $location = $subscriber->location;
 
-            // Get api key from config files
-            $api_key = config('accu.api_key');
+            $this->controller = new Controller();
+            $forecast = $this->controller->getData($location);
 
-            // Parse the location data and get location key
-            $loc_url = "http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${api_key}&q=${location}";
-            $loc_file = file_get_contents($loc_url);
-            $loc_data = json_decode($loc_file, true);
-            $loc_key = $loc_data[0]['Key'];
-
-            // URL for getting general forecast for the day at given location
-            $url = "http://dataservice.accuweather.com/forecasts/v1/daily/1day/${loc_key}?apikey=${api_key}&details=true&metric=true";
-
-            // Parse data and decode for easier processing
-            $json = file_get_contents($url);
-            $forecasts = json_decode($json, true);
-            $headline = $forecasts['Headline'];
-            $daily = $forecasts['DailyForecasts'][0];
+            $headline = $forecast['Headline'];
+            $daily = $forecast['DailyForecasts'][0];
 
             Mail::to($mail)->send(new MailService($subscriber, $headline, $daily));
         }
